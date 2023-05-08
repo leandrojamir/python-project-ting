@@ -1,0 +1,18 @@
+- [ ] 1.1 - Será validado que o método enqueue deve adicionar um valor a fila, modificando seu tamanho	
+- [ ] 1.2 - Será validado que o método dequeue deve remover o elemento a mais tempo na fila, modificando seu tamanho	
+- [ ] 1.3 - Será validado que o método search deve buscar um valor na lista à partir de um índice	
+- [ ] 1.4 - Será validado que o método search deve lançar uma exceção quando o índice for inválido	
+- [ ] 2.1 - Será validado que ao executar o método txt_importer deve retornar uma estrutura contendo as linhas do arquivo	
+- [ ] 2.2 - Será validado que ao executar o método txt_importer com um arquivo TXT que não exista, deve ser exibida a mensagem: Arquivo {path_file} não encontrado	
+- [ ] 2.3 - Será validado que ao executar o método txt_importer com uma extensão diferente de .txt, deve ser exibida uma mensagem: Formato inválido	
+- [ ] 3.1 - Será validado que ao executar a função process com o mesmo nome a execução deverá ser ignorada	
+- [ ] 3.2 - Será validado que ao executar a função process com sucesso deverá retornar mensagem via stdout	
+- [ ] 4.1 - Será validado que ao executar a função remove com sucesso deverá retornar mensagem via stdout	
+- [ ] 4.2 - Será validado que ao executar a função remove um arquivo inexistente deverá retornar a mensagem Não há elementos	
+- [ ] 5.1 - Será validado que ao executar a função file_metadata com sucesso deverá retornar mensagem via stdout	
+- [ ] 5.2 - Será validado que ao executar a função file_metadata com posição inválida deverá retornar a mensagem Posição inválida	
+- [ ] 6 - Implemente os testes para a classe PriorityQueue capaz de armazenar arquivos pequenos de forma prioritária	
+- [ ] 7.1 - Será validado que ao executar a função exists_word com sucesso deverá retornar a mensagem	
+- [ ] 7.2 - Será validado que ao executar a função exists_word com palavra inexistente deverá retornar uma lista vazia	
+- [ ] 8.1 - Será validado que ao executar a função search_by_word com sucesso deverá retornar a mensagem	
+- [ ] 8.2 - Será validado que ao executar a função search_by_word com palavra inexistente deverá retornar uma lista vazia

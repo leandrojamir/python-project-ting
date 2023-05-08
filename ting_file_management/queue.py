@@ -1,21 +1,49 @@
-# iniciando projeto
+from ting_file_management.abstract_queue import AbstractQueue
 # Pacote ting_file_management
 # 1 - Implemente uma fila para armazenar os arquivos que serão lidos.
-from ting_file_management.abstract_queue import AbstractQueue
+#  Preencha a classe Queue, presente no arquivo queue.py utilizando as
+# estruturas vistas no módulo.
 
 
 class Queue(AbstractQueue):
+    #  A fila (Queue) deve ser uma estrutura FIFO, ou seja, o primeiro item a
+    # entrar, deve ser o primeiro a sair. Utilize seus conhecimentos de
+    # estruturas de dados para otimizar as operações implementadas.
     def __init__(self):
-        """Inicialize sua estrutura aqui"""
+        self.list = list()
 
+    #  O tamanho da fila deverá ser exposto utilizando o método __len__ que
+    # permitirá, após implementado, o uso do comando len(instancia_da_fila)
+    # para se obter o tamanho da fila.
     def __len__(self):
-        """Aqui irá sua implementação"""
+        return len(self.list)
 
+    #  A fila deve implementar os métodos de inserção (enqueue)
     def enqueue(self, value):
-        """Aqui irá sua implementação"""
+        return self.list.append(value)
 
+    #  A fila deve implementar os métodos de remoção (dequeue)
     def dequeue(self):
-        """Aqui irá sua implementação"""
+        return self.list.pop(0)
 
-    def search(self, index):
-        """Aqui irá sua implementação"""
+    #  A fila deve implementar os métodos de busca (search)
+    def search(self, index: int):
+        #  Na busca uma exceção do tipo IndexError com a seguinte mensagem:
+        # "Índice Inválido ou Inexistente" deve ser lançada caso um índice
+        # inválido seja passado. Para uma fila com N elementos, índices
+        # válidos são inteiros entre 0 e N-1.
+        # try:
+        if index >= len(self.list):
+            raise IndexError('Índice Inválido ou Inexistente')
+        elif index < 0:
+            raise IndexError('Índice Inválido ou Inexistente')
+        else:
+            return self.list[index]
+        # except IndexError:
+            # raise IndexError('Índice Inválido ou Inexistente')
+
+# tests/test_queue.py::test_enqueue_deve_adicionar_um_valor_a_fila PASSED
+# tests/test_queue.py::test_dequeue_deve_remover_um_valor_a_fila PASSED
+# tests/test_queue.py::test_search_deve_buscar_um_valor_a_partir_de_um_indice
+# PASSED
+# tests/test_queue.py::test_search_com_indice_invalido PASSED
