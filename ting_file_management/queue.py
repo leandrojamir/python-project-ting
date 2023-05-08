@@ -1,3 +1,6 @@
+# iniciando projeto
+# Pacote ting_file_management
+# 1 - Implemente uma fila para armazenar os arquivos que serão lidos.
 from ting_file_management.abstract_queue import AbstractQueue
 
 
