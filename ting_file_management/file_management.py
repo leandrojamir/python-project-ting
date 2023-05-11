@@ -20,5 +20,4 @@ def txt_importer(path_file):
             # A função deve retornar uma lista contendo as linhas do arquivo
             # utilizando "\n" como separador.
             line_list = file.read().split('\n')
-            print(f'\nvvv\nlista contendo linhas: {line_list}')
             return line_list
