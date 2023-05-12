@@ -39,8 +39,28 @@ def process(path_file, instance):
         print(dict_list, file=sys.stdout)
 
 
+#  4 - Implemente uma função remove dentro do módulo file_process capaz de
+# remover o primeiro arquivo processado
+# A função irá receber como parâmetro a fila implementada no requisito 1.
 def remove(instance):
-    """Aqui irá sua implementação"""
+    try:
+        #  Em caso de sucesso de remoção, deve ser emitida a mensagem
+        # "Arquivo {path_file} removido com sucesso" via "stdout", em que
+        # {path_file} é o caminho do arquivo.
+        # #  A fila deve implementar os métodos de remoção (dequeue)
+        # def dequeue(self):
+        #     return self.list.pop(0)
+        # path_file = instance.list
+        path_first_file = instance.list[0]
+        instance.dequeue()
+        print(
+            f"Arquivo {path_first_file} removido com sucesso",
+            file=sys.stdout,
+        )
+    except IndexError:
+        #  Caso não existam arquivos na fila, a função deve apenas emitir a
+        # mensagem "Não há elementos" via "stdout";
+        print("Não há elementos", file=sys.stdout)
 
 
 def file_metadata(instance, position):
