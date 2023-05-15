@@ -63,5 +63,29 @@ def remove(instance):
         print("Não há elementos", file=sys.stdout)
 
 
+#  5 - Implemente uma função file_metadata dentro do módulo file_process capaz
+# de apresentar as informações superficiais de um arquivo processado.
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
+    try:
+        #  A função irá receber como parâmetro a fila implementada no
+        # requisito 1 e o índice a ser buscado;
+        line_list = txt_importer(instance.list[position])
+        #  Caso a posição seja válida, as informações relacionadas ao arquivo
+        # devem ser mostradas via stdout, seguindo o exemplo de estrutura
+        # abaixo.
+        # Exemplo da estrutura de saída em caso de sucesso:
+        # {
+        #     "nome_do_arquivo": "arquivo_teste.txt",
+        #     "qtd_linhas": 3,
+        #     "linhas_do_arquivo": [...]
+        # }
+        dict_list = {
+            "nome_do_arquivo": instance.list[position],
+            "qtd_linhas": len(line_list),
+            "linhas_do_arquivo": line_list,
+        }
+        print(dict_list, file=sys.stdout)
+    except IndexError:
+        #  Caso a posição não exista, deve ser exibida a mensagem de erro
+        # "Posição inválida" via stderr;
+        print("Posição inválida", file=sys.stderr)
