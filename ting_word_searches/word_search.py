@@ -76,7 +76,7 @@ def search_by_word(word, instance):
                 # arquivo incluindo o conteudo alem da linha em que foi
                 # encontrada
                 occurrences.append(
-                    {"linha": index + 1, "conteudo": line}
+                    {"linha": index + 1, "conteudo": line.strip()}
                 )
 
         #  Caso a palavra não seja encontrada em nenhum arquivo, deve-se
@@ -107,3 +107,18 @@ def search_by_word(word, instance):
         }
 
     return [result]
+
+
+# Full diff:
+#   [
+#    {'arquivo': 'statics/nome_pedro.txt',
+#     'ocorrencias': [{'conteudo': 'Aqui contem um texto que fala sobre um
+#                                   menino '
+# -                                'pobre chamado Pedro.',
+# +                                'pobre chamado Pedro.\n',
+# ?                                                     ++
+#                      'linha': 1},
+#                     {'conteudo': 'Pedro tinha uma amiga chamada Carol.',
+#                      'linha': 3}],
+#     'palavra': 'pedro'},
+#           ]
