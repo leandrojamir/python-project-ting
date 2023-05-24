@@ -55,5 +55,55 @@ def exists_word(word, instance):
         return [result]
 
 
+#  8 - Implemente uma função search_by_word dentro do módulo word_search, que
+# busque uma palavra em todos os arquivos processados.
+#  Esta função deverá seguir os mesmos critérios do requisito sete, mas deverá
+# incluir na saída o conteúdo das linhas encontradas, conforme exemplo da
+# estrutura de retorno.
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    path_file = instance.list[0]
+
+    with open(path_file, mode="r") as file:
+        #  no requisito 2 e 7 tinha usado com split mas aprendi uma função bem
+        # mais simplificada readlines()
+        line_list = file.readlines()
+
+        occurrences = []
+        for index, line in enumerate(line_list):
+            # A busca deve ser case insensitive
+            if word.lower() in line.lower():
+                #  Aqui vou retornar a lista com as informações de cada
+                # arquivo incluindo o conteudo alem da linha em que foi
+                # encontrada
+                occurrences.append(
+                    {"linha": index + 1, "conteudo": line}
+                )
+
+        #  Caso a palavra não seja encontrada em nenhum arquivo, deve-se
+        # retornar uma lista vazia;
+        if not occurrences:
+            return []
+
+        # Exemplo da estrutura de retorno:
+        # [{
+        #   "palavra": "de",
+        #   "arquivo": "arquivo_teste.txt",
+        #   "ocorrencias": [
+        #     {
+        #       "linha": 3,
+        #       "conteudo": "Acima de tudo,"
+        #     },
+        #     {
+        #       "linha": 4,
+        #       "conteudo": "é fundamental ressaltar que a adoção de
+        #        políticas descentralizadoras nos obriga"
+        #     }
+        #   ]
+        # }]
+        result = {
+            "palavra": word,
+            "arquivo": path_file,
+            "ocorrencias": occurrences,
+        }
+
+    return [result]
